@@ -14,7 +14,7 @@ namespace Repository
         }      
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
         => ApplicationContext.Set<T>().Where(expression).AsNoTracking();
-        public IQueryable<T> GetAll() => ApplicationContext.Set<T>().AsNoTracking();
+        public virtual IQueryable<T> GetAll() => ApplicationContext.Set<T>().AsNoTracking();
         public void Update(T entity) => ApplicationContext?.Set<T>().Update(entity);
         public void Create(T entity) => ApplicationContext.Set<T>().Add(entity);
         public void Delete(T entity) => ApplicationContext.Set<T>().Remove(entity);

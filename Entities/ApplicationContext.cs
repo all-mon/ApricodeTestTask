@@ -13,7 +13,9 @@ namespace Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<GameGenre>().HasKey(sc => new { sc.GenreId, sc.GameId });
+            modelBuilder.Entity<Game>()
+                .HasMany(g => g.Genres)
+                .WithMany(g => g.Games);
         }
     }
 }

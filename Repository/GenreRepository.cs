@@ -1,6 +1,7 @@
 ﻿using Contracts;
 using Entities;
 using Entities.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Repository
 {
@@ -9,5 +10,7 @@ namespace Repository
         public GenreRepository(ApplicationContext applicationContext) : base(applicationContext)
         {
         }
+
+        
     }
 }

@@ -5,7 +5,7 @@
 namespace Entities.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialDB : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -41,30 +41,30 @@ namespace Entities.Migrations
                 name: "GameGenre",
                 columns: table => new
                 {
-                    GameId = table.Column<int>(type: "int", nullable: false),
-                    GenreId = table.Column<int>(type: "int", nullable: false)
+                    GamesGameId = table.Column<int>(type: "int", nullable: false),
+                    GenresGenreId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GameGenre", x => new { x.GenreId, x.GameId });
+                    table.PrimaryKey("PK_GameGenre", x => new { x.GamesGameId, x.GenresGenreId });
                     table.ForeignKey(
-                        name: "FK_GameGenre_Games_GameId",
-                        column: x => x.GameId,
+                        name: "FK_GameGenre_Games_GamesGameId",
+                        column: x => x.GamesGameId,
                         principalTable: "Games",
                         principalColumn: "GameId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_GameGenre_Genres_GenreId",
-                        column: x => x.GenreId,
+                        name: "FK_GameGenre_Genres_GenresGenreId",
+                        column: x => x.GenresGenreId,
                         principalTable: "Genres",
                         principalColumn: "GenreId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_GameGenre_GameId",
+                name: "IX_GameGenre_GenresGenreId",
                 table: "GameGenre",
-                column: "GameId");
+                column: "GenresGenreId");
         }
 
         /// <inheritdoc />

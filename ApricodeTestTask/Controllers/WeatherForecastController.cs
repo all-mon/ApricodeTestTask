@@ -17,7 +17,7 @@ namespace ApricodeTestTask.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            var games = _repository.Game.GetAll();
+            
 
             return new string[] { "value1", "value2" };
         }

@@ -11,6 +11,6 @@ namespace Entities.Models
         public int GenreId { get; set; }
         public string? Name { get; set; }
 
-       public ICollection<GameGenre> GameGenres { get;set; } = new List<GameGenre>();
+       public ICollection<Game> Games { get;set; } = new List<Game>();
     }
 }

@@ -4,6 +4,6 @@ namespace Contracts
 {
     public interface IGameRepository : IRepositoryBase<Game>
     {
-
+        IEnumerable<Game> GetAllGames();
     }
 }

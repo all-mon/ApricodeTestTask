@@ -9,7 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
 builder.Services.ConfigureRepositoryWrapper();
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson(op =>
+op.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -17,6 +18,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureCors();
 builder.Services.ConfigureIISIntegration();
+
 
 
 var app = builder.Build();

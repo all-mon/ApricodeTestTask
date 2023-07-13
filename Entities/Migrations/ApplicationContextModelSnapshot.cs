@@ -40,21 +40,6 @@ namespace Entities.Migrations
                     b.ToTable("Games");
                 });
 
-            modelBuilder.Entity("Entities.Models.GameGenre", b =>
-                {
-                    b.Property<int>("GenreId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GameId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GenreId", "GameId");
-
-                    b.HasIndex("GameId");
-
-                    b.ToTable("GameGenre");
-                });
-
             modelBuilder.Entity("Entities.Models.Genre", b =>
                 {
                     b.Property<int>("GenreId")
@@ -71,33 +56,34 @@ namespace Entities.Migrations
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("Entities.Models.GameGenre", b =>
+            modelBuilder.Entity("GameGenre", b =>
                 {
-                    b.HasOne("Entities.Models.Game", "Game")
-                        .WithMany("GameGenres")
-                        .HasForeignKey("GameId")
+                    b.Property<int>("GamesGameId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GenresGenreId")
+                        .HasColumnType("int");
+
+                    b.HasKey("GamesGameId", "GenresGenreId");
+
+                    b.HasIndex("GenresGenreId");
+
+                    b.ToTable("GameGenre");
+                });
+
+            modelBuilder.Entity("GameGenre", b =>
+                {
+                    b.HasOne("Entities.Models.Game", null)
+                        .WithMany()
+                        .HasForeignKey("GamesGameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.Models.Genre", "Genre")
-                        .WithMany("GameGenres")
-                        .HasForeignKey("GenreId")
+                    b.HasOne("Entities.Models.Genre", null)
+                        .WithMany()
+                        .HasForeignKey("GenresGenreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Game");
-
-                    b.Navigation("Genre");
-                });
-
-            modelBuilder.Entity("Entities.Models.Game", b =>
-                {
-                    b.Navigation("GameGenres");
-                });
-
-            modelBuilder.Entity("Entities.Models.Genre", b =>
-                {
-                    b.Navigation("GameGenres");
                 });
 #pragma warning restore 612, 618
         }
