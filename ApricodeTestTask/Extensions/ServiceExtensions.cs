@@ -1,6 +1,4 @@
 ﻿using Contracts;
-using Entities;
-using Microsoft.EntityFrameworkCore;
 using Repository;
 
 namespace ApiServer.Extensions
@@ -27,14 +25,5 @@ namespace ApiServer.Extensions
         {
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
         }
-
-        /*public static void ConfigureDBContext(this IServiceCollection services,IConfiguration config)
-        {
-            // получаем строку подключения из файла конфигурации
-            var connection = config["DefaultConnection"];
-
-            // добавляем контекст ApplicationContext в качестве сервиса в приложение
-            services.AddDbContext<ApplicationContext>(o=>o.UseSqlServer(connection));
-        }*/
     }
 }
