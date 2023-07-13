@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Contracts;
+using Entities;
 using Entities.DTO;
-using Microsoft.AspNetCore.Http;
+using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata.Ecma335;
 
 namespace ApiServer.Controllers
 {
@@ -27,6 +29,87 @@ namespace ApiServer.Controllers
                 var games = _repository.Game.GetAllGames();
                 var gamesResult = _mapper.Map<IEnumerable<GameDto>>(games);
                 return Ok(gamesResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+        [HttpGet("{id}", Name ="GameById")]
+        public IActionResult GetGamesById(int id) 
+        {
+            try
+            {
+                var game = _repository.Game.GetById(id);
+                if (game == null) 
+                { 
+                    return NotFound(); 
+                }
+                else 
+                {
+                    var gameResult = _mapper.Map<GameDto>(game);
+                    return Ok(gameResult); 
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, ex.Message);
+            }
+        }
+        [HttpPost]
+        public IActionResult CreateGame([FromBody]GameForCreationDto game)
+        {
+            try
+            {
+                if (game is null)
+                {
+                    return BadRequest("Game is null");
+                }
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest("Invalid model");
+                }
+                
+                var gameEntity = _mapper.Map<Game>(game);
+                _repository.Game.AddGenres(gameEntity, game.GenresIds);
+                _repository.Game.CreateGame(gameEntity);
+                _repository.Save();
+
+                var createdGame = _mapper.Map<GameDto>(gameEntity);
+
+                return CreatedAtRoute("GameById", new { id = createdGame.GameId }, createdGame);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+        [HttpPut("{id}")]
+        public IActionResult UpdateGame(int id,[FromBody]GameForUpdateDto game)
+        {
+            try
+            {
+                if (game is null)
+                {
+                    return BadRequest("Game is null");
+                }
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest("Invalid model");
+                }
+                var gameEntity = _repository.Game.GetById(id);
+                if (gameEntity is null)
+                {
+                    return NotFound();
+                }
+                _mapper.Map(game, gameEntity);
+
+                _repository.Game.UpdateGenres(gameEntity, game.GenresIds);
+               
+                _repository.Game.Update(gameEntity);
+                _repository.Save();
+                return NoContent();
             }
             catch (Exception ex)
             {

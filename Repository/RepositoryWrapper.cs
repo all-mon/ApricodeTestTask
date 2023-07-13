@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using Entities;
+using Entities.Models;
 
 namespace Repository
 {
@@ -36,6 +37,8 @@ namespace Repository
         {
             _context = context;
         }
+
+        
 
         public void Save()
         {
