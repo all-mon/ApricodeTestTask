@@ -18,6 +18,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureCors();
 builder.Services.ConfigureIISIntegration();
+builder.Services.AddAutoMapper(typeof(Program));
 
 
 

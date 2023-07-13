@@ -1,4 +1,6 @@
-﻿using Contracts;
+﻿using AutoMapper;
+using Contracts;
+using Entities.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,9 +12,11 @@ namespace ApiServer.Controllers
     public class GameController : ControllerBase
     {
         private IRepositoryWrapper _repository;
-        public GameController(IRepositoryWrapper repository)
+        private IMapper _mapper;
+        public GameController(IRepositoryWrapper repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -21,7 +25,8 @@ namespace ApiServer.Controllers
             try
             {
                 var games = _repository.Game.GetAllGames();
-                return Ok(games);
+                var gamesResult = _mapper.Map<IEnumerable<GameDto>>(games);
+                return Ok(gamesResult);
             }
             catch (Exception ex)
             {
