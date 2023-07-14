@@ -15,7 +15,8 @@ namespace Entities
         {
             modelBuilder.Entity<Game>()
                 .HasMany(g => g.Genres)
-                .WithMany(g => g.Games);
+                .WithMany(g => g.Games)
+                .UsingEntity<GameGenre>();
         }
     }
 }

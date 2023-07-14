@@ -78,7 +78,7 @@ namespace ApiServer.Controllers
 
                 var createdGame = _mapper.Map<GameDto>(gameEntity);
 
-                return CreatedAtRoute("GameById", new { id = createdGame.GameId }, createdGame);
+                return CreatedAtRoute("GameById", new { id = createdGame.Id }, createdGame);
             }
             catch (Exception ex)
             {

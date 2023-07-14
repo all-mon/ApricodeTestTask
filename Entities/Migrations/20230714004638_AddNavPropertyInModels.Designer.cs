@@ -3,6 +3,7 @@ using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entities.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230714004638_AddNavPropertyInModels")]
+    partial class AddNavPropertyInModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,11 +26,11 @@ namespace Entities.Migrations
 
             modelBuilder.Entity("Entities.Models.Game", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("GameId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GameId"));
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -35,7 +38,7 @@ namespace Entities.Migrations
                     b.Property<string>("Studio")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("GameId");
 
                     b.ToTable("Games");
                 });
@@ -57,16 +60,16 @@ namespace Entities.Migrations
 
             modelBuilder.Entity("Entities.Models.Genre", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("GenreId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GenreId"));
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("GenreId");
 
                     b.ToTable("Genres");
                 });

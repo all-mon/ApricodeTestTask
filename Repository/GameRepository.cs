@@ -40,18 +40,41 @@ namespace Repository
             
         }
 
-        public void UpdateGenres(Game game, IEnumerable<int>? genresIds)
+        public void UpdateGenres(Game gameToUpdate, IEnumerable<int>? genresIds)
         {
-            if (genresIds.IsNullOrEmpty())
+
+            if (genresIds == null)
             {
+                gameToUpdate!.GameGenres = new List<GameGenre>();
                 return;
             }
-            var newGenres = ApplicationContext.Genres
-                .Where(g => genresIds.Contains(g.GenreId))
-                .ToList();
-            game.Genres.Clear();
-            foreach (var genre in newGenres)game.Genres.Add(genre);
-           
+
+            var selectedGenresHS = new HashSet<int>(genresIds);
+            var devicePlacementsHS = new HashSet<int>(gameToUpdate.GameGenres.Select(p => p.Genre.GenreId));
+
+            foreach (var genre in ApplicationContext.Genres)
+            {
+                if (selectedGenresHS.Contains(genre.GenreId))
+                {
+                    if (!devicePlacementsHS.Contains(genre.GenreId))
+                    {
+                        gameToUpdate.GameGenres!.Add(new GameGenre
+                        {
+                            GenreId = genre.GenreId,
+                            GameId = gameToUpdate.GameId
+                        });
+                    }
+                }
+                else
+                {
+                    if (devicePlacementsHS.Contains(genre.GenreId))
+                    {
+                        GameGenre ggToRemove = gameToUpdate.GameGenres!
+                            .FirstOrDefault(i => i.GameId == genre.GenreId)!;
+                        ApplicationContext.Remove(ggToRemove!);
+                    }
+                }
+            }
 
         }
     }
