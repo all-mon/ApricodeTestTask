@@ -15,7 +15,7 @@ namespace Repository
             {
                 foreach (int genresId in genresIds!)
                 {
-                    var genre = ApplicationContext.Genres.First(g => g.GenreId == genresId);
+                    var genre = ApplicationContext.Genres.First(g => g.Id == genresId);
                     if (genre is not null)
                     {
                         game.Genres?.Add(genre);
@@ -25,7 +25,7 @@ namespace Repository
         }
         public void CreateGame(Game game) => Create(game);
         public IEnumerable<Game> GetAllGames() => GetAll().Include(g => g.Genres).ToList();
-        public Game? GetById(int id) => FindByCondition(g => g.GameId.Equals(id)).Include(g => g.Genres).Single();
+        public Game? GetById(int id) => FindByCondition(g => g.Id.Equals(id)).Include(g => g.Genres).Single();
         public void UpdateGame(Game game)
         {
             try
@@ -50,27 +50,27 @@ namespace Repository
             }
 
             var selectedGenresHS = new HashSet<int>(genresIds);
-            var devicePlacementsHS = new HashSet<int>(gameToUpdate.GameGenres.Select(p => p.Genre.GenreId));
+            var devicePlacementsHS = new HashSet<int>(gameToUpdate.GameGenres.Select(p => p.Genre.Id));
 
             foreach (var genre in ApplicationContext.Genres)
             {
-                if (selectedGenresHS.Contains(genre.GenreId))
+                if (selectedGenresHS.Contains(genre.Id))
                 {
-                    if (!devicePlacementsHS.Contains(genre.GenreId))
+                    if (!devicePlacementsHS.Contains(genre.Id))
                     {
                         gameToUpdate.GameGenres!.Add(new GameGenre
                         {
-                            GenreId = genre.GenreId,
-                            GameId = gameToUpdate.GameId
+                            GenreId = genre.Id,
+                            GameId = gameToUpdate.Id
                         });
                     }
                 }
                 else
                 {
-                    if (devicePlacementsHS.Contains(genre.GenreId))
+                    if (devicePlacementsHS.Contains(genre.Id))
                     {
                         GameGenre ggToRemove = gameToUpdate.GameGenres!
-                            .FirstOrDefault(i => i.GameId == genre.GenreId)!;
+                            .FirstOrDefault(i => i.GameId == genre.Id)!;
                         ApplicationContext.Remove(ggToRemove!);
                     }
                 }
