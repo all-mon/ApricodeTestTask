@@ -7,7 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
+builder.Services.AddDbContext<ApplicationContext>(
+    options =>
+    {
+        options.UseSqlServer(connection);
+        options.EnableSensitiveDataLogging();
+    });
 builder.Services.ConfigureRepositoryWrapper();
 builder.Services.AddControllers().AddNewtonsoftJson(op =>
 op.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);

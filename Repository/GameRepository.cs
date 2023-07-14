@@ -25,12 +25,11 @@ namespace Repository
         }
         public void CreateGame(Game game) => Create(game);
         public IEnumerable<Game> GetAllGames() => GetAll().Include(g => g.Genres).ToList();
-        public Game? GetById(int id) => FindByCondition(g => g.GameId.Equals(id)).Include(g => g.Genres).FirstOrDefault();
+        public Game? GetById(int id) => FindByCondition(g => g.GameId.Equals(id)).Include(g => g.Genres).Single();
         public void UpdateGame(Game game)
         {
             try
-            {
-                
+            { 
                 Update(game);
             }
             catch (Exception)
@@ -43,20 +42,17 @@ namespace Repository
 
         public void UpdateGenres(Game game, IEnumerable<int>? genresIds)
         {
-            if (!genresIds.IsNullOrEmpty())
+            if (genresIds.IsNullOrEmpty())
             {
-                foreach (int genresId in genresIds!)
-                {
-                    var genre = ApplicationContext.Genres.Where(s => s.GenreId == genresId).AsNoTracking().FirstOrDefault();
-                    if (genre is not null)
-                    {
-                        if (!game.Genres.Contains(genre))
-                        {
-                            game.Genres.Add(genre);
-                        }                     
-                    }
-                }
+                return;
             }
+            var newGenres = ApplicationContext.Genres
+                .Where(g => genresIds.Contains(g.GenreId))
+                .ToList();
+            game.Genres.Clear();
+            foreach (var genre in newGenres)game.Genres.Add(genre);
+           
+
         }
     }
 }
