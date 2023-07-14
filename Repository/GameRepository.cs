@@ -8,7 +8,7 @@ namespace Repository
 {
     public class GameRepository : RepositoryBase<Game>, IGameRepository
     {
-        public GameRepository(ApplicationContext applicationContext):base(applicationContext) { }
+        public GameRepository(ApplicationContext applicationContext) : base(applicationContext) { }
         public void AddGenres(Game game, IEnumerable<int>? genresIds)
         {
             if (!genresIds.IsNullOrEmpty())
@@ -21,9 +21,12 @@ namespace Repository
                         game.Genres?.Add(genre);
                     }
                 }
-            }       
+            }
         }
         public void CreateGame(Game game) => Create(game);
+
+        public void DeleteGame(Game game) => Delete(game);
+        
         public IEnumerable<Game> GetAllGames() => GetAll().Include(g => g.Genres).ToList();
         public Game? GetById(int id) => ApplicationContext.Games
             .Include(g => g.GameGenres)
@@ -32,7 +35,7 @@ namespace Repository
         public void UpdateGame(Game game)
         {
             try
-            { 
+            {
                 Update(game);
             }
             catch (Exception)
@@ -40,18 +43,19 @@ namespace Repository
 
                 throw;
             }
-            
+
         }
 
         public void UpdateGenres(Game gameToUpdate, IEnumerable<int>? genresIds)
         {
+            //todo 
 
             if (genresIds.IsNullOrEmpty())
             {
                 gameToUpdate.GameGenres.Clear();
                 return;
             }
-            
+
             gameToUpdate.GameGenres.Clear();
 
             foreach (int genresId in genresIds!)

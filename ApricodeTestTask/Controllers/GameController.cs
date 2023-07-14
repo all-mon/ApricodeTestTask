@@ -107,13 +107,34 @@ namespace ApiServer.Controllers
                 gameEntity.Studio = game.Studio;
                 
                 _repository.Game.UpdateGenres(gameEntity, game.GenresIds);
-               
                 _repository.Game.Update(gameEntity);
+
                 _repository.Save();
                 return NoContent();
             }
             catch (Exception ex)
             {
+                return StatusCode(500, ex.Message);
+            }
+        }
+        [HttpDelete("{id}")]
+        public IActionResult DeleteGame(int id)
+        {
+            try
+            {
+                var game = _repository.Game.GetById(id);
+                if (game is null)
+                {
+                    return NotFound();
+                }
+                _repository.Game.DeleteGame(game);
+                _repository.Save();
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+
                 return StatusCode(500, ex.Message);
             }
         }

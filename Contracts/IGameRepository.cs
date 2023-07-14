@@ -10,5 +10,6 @@ namespace Contracts
         void UpdateGenres(Game game, IEnumerable<int>? genresIds);
         void CreateGame(Game game);
         void UpdateGame(Game game);
+        void DeleteGame(Game game);
     }
 }
