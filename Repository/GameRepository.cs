@@ -25,7 +25,10 @@ namespace Repository
         }
         public void CreateGame(Game game) => Create(game);
         public IEnumerable<Game> GetAllGames() => GetAll().Include(g => g.Genres).ToList();
-        public Game? GetById(int id) => FindByCondition(g => g.Id.Equals(id)).Include(g => g.Genres).Single();
+        public Game? GetById(int id) => ApplicationContext.Games
+            .Include(g => g.GameGenres)
+                .ThenInclude(gg => gg.Genre)
+            .FirstOrDefault(g => g.Id == id);
         public void UpdateGame(Game game)
         {
             try
@@ -43,39 +46,22 @@ namespace Repository
         public void UpdateGenres(Game gameToUpdate, IEnumerable<int>? genresIds)
         {
 
-            if (genresIds == null)
+            if (genresIds.IsNullOrEmpty())
             {
-                gameToUpdate!.GameGenres = new List<GameGenre>();
+                gameToUpdate.GameGenres.Clear();
                 return;
             }
+            
+            gameToUpdate.GameGenres.Clear();
 
-            var selectedGenresHS = new HashSet<int>(genresIds);
-            var devicePlacementsHS = new HashSet<int>(gameToUpdate.GameGenres.Select(p => p.Genre.Id));
-
-            foreach (var genre in ApplicationContext.Genres)
+            foreach (int genresId in genresIds!)
             {
-                if (selectedGenresHS.Contains(genre.Id))
+                gameToUpdate.GameGenres.Add(new GameGenre
                 {
-                    if (!devicePlacementsHS.Contains(genre.Id))
-                    {
-                        gameToUpdate.GameGenres!.Add(new GameGenre
-                        {
-                            GenreId = genre.Id,
-                            GameId = gameToUpdate.Id
-                        });
-                    }
-                }
-                else
-                {
-                    if (devicePlacementsHS.Contains(genre.Id))
-                    {
-                        GameGenre ggToRemove = gameToUpdate.GameGenres!
-                            .FirstOrDefault(i => i.GameId == genre.Id)!;
-                        ApplicationContext.Remove(ggToRemove!);
-                    }
-                }
+                    GameId = gameToUpdate.Id,
+                    GenreId = genresId
+                });
             }
-
         }
     }
 }

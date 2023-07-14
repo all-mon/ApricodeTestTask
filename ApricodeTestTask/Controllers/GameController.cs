@@ -103,8 +103,9 @@ namespace ApiServer.Controllers
                 {
                     return NotFound();
                 }
-                _mapper.Map(game, gameEntity);
-
+                gameEntity.Name = game.Name;
+                gameEntity.Studio = game.Studio;
+                
                 _repository.Game.UpdateGenres(gameEntity, game.GenresIds);
                
                 _repository.Game.Update(gameEntity);

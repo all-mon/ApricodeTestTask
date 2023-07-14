@@ -11,7 +11,7 @@ namespace ApiServer
             CreateMap<Game, GameDto>();
             CreateMap<Genre, GenreDto>();
             CreateMap<GameForCreationDto, Game>();
-            CreateMap<GameForUpdateDto, Game>();
+           // CreateMap<GameForUpdateDto, Game>();
         }
     }
 }
