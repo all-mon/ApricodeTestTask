@@ -10,10 +10,12 @@ namespace ApiServer.Controllers
     [ApiController]
     public class GameController : ControllerBase
     {
+        private ILoggerManager _logger;
         private IRepositoryWrapper _repository;
         private IMapper _mapper;
-        public GameController(IRepositoryWrapper repository, IMapper mapper)
+        public GameController(ILoggerManager logger,IRepositoryWrapper repository, IMapper mapper)
         {
+            _logger = logger;
             _repository = repository;
             _mapper = mapper;
         }
@@ -25,11 +27,13 @@ namespace ApiServer.Controllers
             {
                 var games = _repository.Game.GetAllGames();
                 var gamesResult = _mapper.Map<IEnumerable<GameDto>>(games);
+                _logger.LogInfo($"Get all games from database.");
                 return Ok(gamesResult);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                _logger.LogError($"Exception inside GetAllGames action: {ex.Message}");
+                return StatusCode(500, "Internal server error");
             }
         }
         [HttpGet("{id}", Name = "GameById")]
@@ -38,20 +42,22 @@ namespace ApiServer.Controllers
             try
             {
                 var game = _repository.Game.GetById(id);
-                if (game == null)
+                if (game is null)
                 {
+                    _logger.LogError($"From GetAllGames action: NotFound Game with id: {id}.");
                     return NotFound();
                 }
                 else
                 {
                     var gameResult = _mapper.Map<GameDto>(game);
+                    _logger.LogInfo($"GetGamesById action returned game by id: {id}");
                     return Ok(gameResult);
                 }
             }
             catch (Exception ex)
             {
-
-                return StatusCode(500, ex.Message);
+                _logger.LogError($"Exception inside GetGamesById action: {ex.Message}");
+                return StatusCode(500, "Internal server error");
             }
         }
         [HttpPost]
@@ -61,10 +67,12 @@ namespace ApiServer.Controllers
             {
                 if (game is null)
                 {
+                    _logger.LogError("Game object sent from client is null.");
                     return BadRequest("Game is null");
                 }
                 if (!ModelState.IsValid)
                 {
+                    _logger.LogError("Invalid game object sent from client.");
                     return BadRequest("Invalid model");
                 }
 
@@ -74,12 +82,13 @@ namespace ApiServer.Controllers
                 _repository.Save();
 
                 var createdGame = _mapper.Map<GameDto>(gameEntity);
-
+                _logger.LogInfo($"Created game: {createdGame}");
                 return CreatedAtRoute("GameById", new { id = createdGame.Id }, createdGame);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                _logger.LogError($"Exception inside CreateGame action: {ex.Message}");
+                return StatusCode(500, "Internal server error");
             }
         }
         [HttpPut("{id}")]
@@ -89,10 +98,12 @@ namespace ApiServer.Controllers
             {
                 if (game is null)
                 {
+                    _logger.LogError("Game object is null.");
                     return BadRequest("Game is null");
                 }
                 if (!ModelState.IsValid)
                 {
+                    _logger.LogError("Invalid game object sent from client.");
                     return BadRequest("Invalid model");
                 }
                 var gameEntity = _repository.Game.GetById(id);
@@ -111,7 +122,8 @@ namespace ApiServer.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                _logger.LogError($"Exception inside UpdateGame action: {ex.Message}");
+                return StatusCode(500, "Internal server error");
             }
         }
         [HttpDelete("{id}")]
@@ -122,23 +134,30 @@ namespace ApiServer.Controllers
                 var game = _repository.Game.GetById(id);
                 if (game is null)
                 {
+                    _logger.LogError("Game object is null.");
                     return NotFound();
                 }
                 _repository.Game.DeleteGame(game);
                 _repository.Save();
-
+                _logger.LogInfo($"Deleted game with id: {id}");
                 return NoContent();
             }
             catch (Exception ex)
             {
-
-                return StatusCode(500, ex.Message);
+                _logger.LogError($"Exception inside UpdateGame action: {ex.Message}");
+                return StatusCode(500, "Internal server error");
             }
         }
         [HttpGet]
         [Route("genre/{genreId}")]
         public IActionResult GetGamesByGenre(int genreId)
         {
+            var genre = _repository.Genre.GetById(genreId);
+            if (genre is null)
+            {
+                _logger.LogError($"The genre with the requested id({genreId}) does not exist.");
+                return NotFound();
+            }
             try
             {
                 var games = _repository.Game.GetGamesByGenre(genreId);

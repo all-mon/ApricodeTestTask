@@ -10,6 +10,7 @@ namespace Repository
         {
         }
 
-
+        public Genre? GetById(int id) => FindByCondition(g=>g.Id.Equals(id)).FirstOrDefault();
+        
     }
 }

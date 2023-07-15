@@ -2,9 +2,10 @@ using ApiServer.Extensions;
 using Entities;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
+using NLog;
 
 var builder = WebApplication.CreateBuilder(args);
-
+LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 // Add services to the container.
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationContext>(
@@ -13,6 +14,7 @@ builder.Services.AddDbContext<ApplicationContext>(
         options.UseSqlServer(connection);
         options.EnableSensitiveDataLogging();
     });
+builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureRepositoryWrapper();
 builder.Services.AddControllers().AddNewtonsoftJson(op =>
 op.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
