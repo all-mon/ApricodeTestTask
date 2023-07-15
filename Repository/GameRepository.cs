@@ -9,9 +9,8 @@ namespace Repository
     public class GameRepository : RepositoryBase<Game>, IGameRepository
     {
         public GameRepository(ApplicationContext applicationContext) : base(applicationContext) { }
-        public void AddGenres(Game game, IEnumerable<int>? genresIds)
+        public void AddGameGenres(Game game, IEnumerable<int>? genresIds)
         {
-            //Добавить проверку на не корректные genresIds
             if (!genresIds.IsNullOrEmpty())
             {
                 foreach (int genresId in genresIds!)
@@ -42,8 +41,6 @@ namespace Repository
         public void UpdateGame(Game game) => Update(game);
         public void UpdateGenres(Game gameToUpdate, IEnumerable<int>? genresIds)
         {
-            //Добавить проверку на не корректные genresIds
-
             if (genresIds.IsNullOrEmpty())
             {
                 gameToUpdate.GameGenres.Clear();

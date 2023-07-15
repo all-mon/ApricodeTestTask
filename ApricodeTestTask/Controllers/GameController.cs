@@ -75,9 +75,13 @@ namespace ApiServer.Controllers
                     _logger.LogError("Invalid game object sent from client.");
                     return BadRequest("Invalid model");
                 }
-
+                var existingGenresIds = _repository.Genre.GetAll().Select(x => x.Id);
+                if (!game.GenresIds.All(existingGenresIds.Contains))
+                {
+                    return BadRequest($"Attempt to add a non-existent genre id for a game");
+                }
                 var gameEntity = _mapper.Map<Game>(game);
-                _repository.Game.AddGenres(gameEntity, game.GenresIds);
+                _repository.Game.AddGameGenres(gameEntity, game.GenresIds);
                 _repository.Game.CreateGame(gameEntity);
                 _repository.Save();
 
@@ -105,6 +109,11 @@ namespace ApiServer.Controllers
                 {
                     _logger.LogError("Invalid game object sent from client.");
                     return BadRequest("Invalid model");
+                }
+                var existingGenresIds = _repository.Genre.GetAll().Select(x => x.Id);
+                if (!game.GenresIds.All(existingGenresIds.Contains))
+                {
+                    return BadRequest($"Attempt to add a non-existent genre id for a game");
                 }
                 var gameEntity = _repository.Game.GetById(id);
                 if (gameEntity is null)
