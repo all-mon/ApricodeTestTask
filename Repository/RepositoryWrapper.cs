@@ -1,6 +1,5 @@
 ﻿using Contracts;
 using Entities;
-using Entities.Models;
 
 namespace Repository
 {
@@ -9,13 +8,13 @@ namespace Repository
         private ApplicationContext _context;
         private IGameRepository _game;
         private IGenreRepository _genre;
-        public IGameRepository Game 
+        public IGameRepository Game
         {
-            get 
-            { 
-                if (_game == null) 
+            get
+            {
+                if (_game == null)
                 {
-                    _game = new GameRepository(_context); 
+                    _game = new GameRepository(_context);
                 }
                 return _game;
             }
@@ -25,7 +24,7 @@ namespace Repository
         {
             get
             {
-                if ( _genre == null)
+                if (_genre == null)
                 {
                     _genre = new GenreRepository(_context);
                 }
@@ -38,11 +37,11 @@ namespace Repository
             _context = context;
         }
 
-        
+
 
         public void Save()
         {
-           _context.SaveChanges();
+            _context.SaveChanges();
         }
     }
 }

@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
 using Contracts;
-using Entities;
 using Entities.DTO;
 using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata.Ecma335;
 
 namespace ApiServer.Controllers
 {
@@ -35,20 +32,20 @@ namespace ApiServer.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-        [HttpGet("{id}", Name ="GameById")]
-        public IActionResult GetGamesById(int id) 
+        [HttpGet("{id}", Name = "GameById")]
+        public IActionResult GetGamesById(int id)
         {
             try
             {
                 var game = _repository.Game.GetById(id);
-                if (game == null) 
-                { 
-                    return NotFound(); 
+                if (game == null)
+                {
+                    return NotFound();
                 }
-                else 
+                else
                 {
                     var gameResult = _mapper.Map<GameDto>(game);
-                    return Ok(gameResult); 
+                    return Ok(gameResult);
                 }
             }
             catch (Exception ex)
@@ -58,7 +55,7 @@ namespace ApiServer.Controllers
             }
         }
         [HttpPost]
-        public IActionResult CreateGame([FromBody]GameForCreationDto game)
+        public IActionResult CreateGame([FromBody] GameForCreationDto game)
         {
             try
             {
@@ -70,7 +67,7 @@ namespace ApiServer.Controllers
                 {
                     return BadRequest("Invalid model");
                 }
-                
+
                 var gameEntity = _mapper.Map<Game>(game);
                 _repository.Game.AddGenres(gameEntity, game.GenresIds);
                 _repository.Game.CreateGame(gameEntity);
@@ -86,7 +83,7 @@ namespace ApiServer.Controllers
             }
         }
         [HttpPut("{id}")]
-        public IActionResult UpdateGame(int id,[FromBody]GameForUpdateDto game)
+        public IActionResult UpdateGame(int id, [FromBody] GameForUpdateDto game)
         {
             try
             {
@@ -105,7 +102,7 @@ namespace ApiServer.Controllers
                 }
                 gameEntity.Name = game.Name;
                 gameEntity.Studio = game.Studio;
-                
+
                 _repository.Game.UpdateGenres(gameEntity, game.GenresIds);
                 _repository.Game.Update(gameEntity);
 
