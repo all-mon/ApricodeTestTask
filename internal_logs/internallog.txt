@@ -407,3 +407,509 @@
 2023-07-15 07:34:44.3269 Debug FileTarget(Name=logfile): Preparing for new file: 'C:/Users/monah/Sharp/ApricodeTestTask/logs/2023-07-15_logfile.txt'
 2023-07-15 07:34:44.3269 Debug FileTarget(Name=logfile): Creating file appender: 'C:/Users/monah/Sharp/ApricodeTestTask/logs/2023-07-15_logfile.txt'
 2023-07-15 07:34:44.3269 Trace FileTarget(Name=logfile): Opening C:/Users/monah/Sharp/ApricodeTestTask/logs/2023-07-15_logfile.txt with allowFileSharedWriting=False
+2023-07-15 08:03:38.5516 Info Message Template Auto Format enabled
+2023-07-15 08:03:38.6227 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:03:38.6227 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:03:38.6227 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:03:38.6227 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:03:38.6353 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:03:38.6353 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:03:38.6353 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:03:38.6353 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:03:38.6353 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-15 08:03:38.6353 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-15 08:03:38.6353 Trace ParseRulesElement
+2023-07-15 08:03:38.6555 Debug Watching file-filter 'nlog.config' in directory: C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask
+2023-07-15 08:03:38.6555 Debug --- NLog configuration dump ---
+2023-07-15 08:03:38.6555 Debug Targets:
+2023-07-15 08:03:38.6555 Debug FileTarget(Name=logfile)
+2023-07-15 08:03:38.6555 Debug Rules:
+2023-07-15 08:03:38.6555 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-15 08:03:38.6630 Debug --- End of NLog configuration dump ---
+2023-07-15 08:03:38.6630 Trace FindReachableObject<System.Object>:
+2023-07-15 08:03:38.6630 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-15 08:03:38.6630 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-15 08:03:38.6630 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-15 08:03:38.6630 Trace   Scanning Property FileName 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-15 08:03:38.6630 Trace   Scanning SimpleLayout 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt'
+2023-07-15 08:03:38.6630 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:03:38.6630 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:03:38.6630 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:03:38.6630 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:03:38.6783 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-15 08:03:38.6783 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-15 08:03:38.6783 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:03:38.6783 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:03:38.6783 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:03:38.6783 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:03:38.6783 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:03:38.6783 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:03:38.6783 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-15 08:03:38.6783 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-15 08:03:38.6783 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask\nlog.config
+2023-07-15 08:03:38.6783 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-15 08:03:38.6953 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-15 08:03:38.6953 Trace Initializing Layout Renderer: ${message}
+2023-07-15 08:03:38.6953 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:03:38.6953 Trace Initializing Layout Renderer: ${level}
+2023-07-15 08:03:38.6953 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:03:38.6953 Trace Initializing Layout Renderer: ${longdate}
+2023-07-15 08:03:38.6953 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-15 08:03:38.6953 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:03:38.6953 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-15 08:03:38.6953 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:03:38.6953 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:03:38.6953 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:03:38.6953 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:03:38.6953 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:03:38.6953 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:03:38.6953 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:03:38.7104 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-15 08:03:38.7104 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:03:38.7104 Trace Initializing C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt
+2023-07-15 08:03:38.7104 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:03:38.7104 Trace Scanning SimpleLayout 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt'
+2023-07-15 08:03:38.7104 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:03:38.7104 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:03:38.7104 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:03:38.7104 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:03:38.7104 Trace Initializing FileTarget(Name=logfile)
+2023-07-15 08:03:38.7104 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-15 08:03:38.7104 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-15 08:03:38.7104 Trace  Scanning Property FileName 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-15 08:03:38.7104 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-15 08:03:38.7104 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-15 08:03:38.7104 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-15 08:03:56.0033 Debug Targets configured when LogLevel >= Debug for Logger: LoggerService.LoggerManager
+2023-07-15 08:03:56.0033 Debug Logger LoggerService.LoggerManager [Debug] => logfile
+2023-07-15 08:03:56.0033 Debug Logger LoggerService.LoggerManager [Info] => logfile
+2023-07-15 08:03:56.0033 Debug Logger LoggerService.LoggerManager [Warn] => logfile
+2023-07-15 08:03:56.0033 Debug Logger LoggerService.LoggerManager [Error] => logfile
+2023-07-15 08:03:56.0033 Debug Logger LoggerService.LoggerManager [Fatal] => logfile
+2023-07-15 08:03:56.0183 Debug FileTarget(Name=logfile): Preparing for new file: 'C:/Users/monah/Sharp/ApricodeTestTask/logs/2023-07-15_logfile.txt'
+2023-07-15 08:03:56.0183 Debug FileTarget(Name=logfile): Creating file appender: 'C:/Users/monah/Sharp/ApricodeTestTask/logs/2023-07-15_logfile.txt'
+2023-07-15 08:03:56.0183 Trace FileTarget(Name=logfile): Opening C:/Users/monah/Sharp/ApricodeTestTask/logs/2023-07-15_logfile.txt with allowFileSharedWriting=False
+2023-07-15 08:08:06.8768 Info Message Template Auto Format enabled
+2023-07-15 08:08:06.9338 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:08:06.9338 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:08:06.9338 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:08:06.9338 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:08:06.9338 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:08:06.9338 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:08:06.9338 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:08:06.9338 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:08:06.9338 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-15 08:08:06.9338 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-15 08:08:06.9338 Trace ParseRulesElement
+2023-07-15 08:08:06.9538 Debug Watching file-filter 'nlog.config' in directory: C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask
+2023-07-15 08:08:06.9538 Debug --- NLog configuration dump ---
+2023-07-15 08:08:06.9538 Debug Targets:
+2023-07-15 08:08:06.9538 Debug FileTarget(Name=logfile)
+2023-07-15 08:08:06.9538 Debug Rules:
+2023-07-15 08:08:06.9538 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-15 08:08:06.9538 Debug --- End of NLog configuration dump ---
+2023-07-15 08:08:06.9609 Trace FindReachableObject<System.Object>:
+2023-07-15 08:08:06.9609 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-15 08:08:06.9609 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-15 08:08:06.9609 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-15 08:08:06.9609 Trace   Scanning Property FileName 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-15 08:08:06.9609 Trace   Scanning SimpleLayout 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt'
+2023-07-15 08:08:06.9609 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:08:06.9609 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:08:06.9609 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:08:06.9609 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:08:06.9609 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-15 08:08:06.9609 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-15 08:08:06.9609 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:08:06.9609 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:08:06.9759 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:08:06.9759 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:08:06.9759 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:08:06.9759 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:08:06.9759 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-15 08:08:06.9759 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-15 08:08:06.9759 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask\nlog.config
+2023-07-15 08:08:06.9759 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-15 08:08:06.9921 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-15 08:08:06.9921 Trace Initializing Layout Renderer: ${message}
+2023-07-15 08:08:06.9921 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:08:06.9921 Trace Initializing Layout Renderer: ${level}
+2023-07-15 08:08:06.9921 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:08:06.9921 Trace Initializing Layout Renderer: ${longdate}
+2023-07-15 08:08:06.9921 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-15 08:08:06.9921 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:08:06.9921 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-15 08:08:06.9921 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:08:06.9921 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:08:06.9921 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:08:06.9921 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:08:06.9921 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:08:06.9921 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:08:06.9921 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:08:06.9921 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-15 08:08:06.9921 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:08:06.9921 Trace Initializing C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt
+2023-07-15 08:08:06.9921 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:08:06.9921 Trace Scanning SimpleLayout 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt'
+2023-07-15 08:08:06.9921 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:08:06.9921 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:08:07.0079 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:08:07.0079 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:08:07.0079 Trace Initializing FileTarget(Name=logfile)
+2023-07-15 08:08:07.0079 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-15 08:08:07.0079 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-15 08:08:07.0079 Trace  Scanning Property FileName 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-15 08:08:07.0079 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-15 08:08:07.0079 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-15 08:08:07.0079 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-15 08:09:15.9350 Info Message Template Auto Format enabled
+2023-07-15 08:09:15.9911 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:09:15.9937 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:09:15.9937 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:09:15.9937 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:09:15.9937 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:09:15.9937 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:09:15.9937 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:09:15.9937 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:09:15.9937 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-15 08:09:15.9937 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-15 08:09:15.9937 Trace ParseRulesElement
+2023-07-15 08:09:16.0116 Debug Watching file-filter 'nlog.config' in directory: C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask
+2023-07-15 08:09:16.0116 Debug --- NLog configuration dump ---
+2023-07-15 08:09:16.0116 Debug Targets:
+2023-07-15 08:09:16.0116 Debug FileTarget(Name=logfile)
+2023-07-15 08:09:16.0116 Debug Rules:
+2023-07-15 08:09:16.0116 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-15 08:09:16.0116 Debug --- End of NLog configuration dump ---
+2023-07-15 08:09:16.0116 Trace FindReachableObject<System.Object>:
+2023-07-15 08:09:16.0116 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-15 08:09:16.0116 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-15 08:09:16.0228 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-15 08:09:16.0228 Trace   Scanning Property FileName 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-15 08:09:16.0228 Trace   Scanning SimpleLayout 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt'
+2023-07-15 08:09:16.0228 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:09:16.0228 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:09:16.0228 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:09:16.0228 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:09:16.0228 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-15 08:09:16.0228 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-15 08:09:16.0228 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:09:16.0228 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:09:16.0228 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:09:16.0228 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:09:16.0228 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:09:16.0228 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:09:16.0228 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-15 08:09:16.0228 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-15 08:09:16.0228 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask\nlog.config
+2023-07-15 08:09:16.0228 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-15 08:09:16.0383 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-15 08:09:16.0383 Trace Initializing Layout Renderer: ${message}
+2023-07-15 08:09:16.0383 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:09:16.0383 Trace Initializing Layout Renderer: ${level}
+2023-07-15 08:09:16.0383 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:09:16.0383 Trace Initializing Layout Renderer: ${longdate}
+2023-07-15 08:09:16.0383 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-15 08:09:16.0383 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:09:16.0383 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-15 08:09:16.0383 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:09:16.0383 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:09:16.0383 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:09:16.0383 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:09:16.0383 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:09:16.0383 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:09:16.0383 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:09:16.0383 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-15 08:09:16.0383 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:09:16.0383 Trace Initializing C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt
+2023-07-15 08:09:16.0383 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:09:16.0383 Trace Scanning SimpleLayout 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt'
+2023-07-15 08:09:16.0383 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:09:16.0383 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:09:16.0383 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:09:16.0383 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:09:16.0383 Trace Initializing FileTarget(Name=logfile)
+2023-07-15 08:09:16.0555 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-15 08:09:16.0555 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-15 08:09:16.0555 Trace  Scanning Property FileName 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-15 08:09:16.0555 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-15 08:09:16.0555 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-15 08:09:16.0555 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-15 08:22:34.8120 Info Message Template Auto Format enabled
+2023-07-15 08:22:34.8504 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:22:34.8504 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:22:34.8504 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:22:34.8504 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:22:34.8504 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:22:34.8504 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:22:34.8504 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:22:34.8504 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:22:34.8504 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-15 08:22:34.8504 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-15 08:22:34.8504 Trace ParseRulesElement
+2023-07-15 08:22:34.8504 Debug Watching file-filter 'nlog.config' in directory: C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask
+2023-07-15 08:22:34.8504 Debug --- NLog configuration dump ---
+2023-07-15 08:22:34.8504 Debug Targets:
+2023-07-15 08:22:34.8504 Debug FileTarget(Name=logfile)
+2023-07-15 08:22:34.8504 Debug Rules:
+2023-07-15 08:22:34.8664 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-15 08:22:34.8664 Debug --- End of NLog configuration dump ---
+2023-07-15 08:22:34.8664 Trace FindReachableObject<System.Object>:
+2023-07-15 08:22:34.8664 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-15 08:22:34.8664 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-15 08:22:34.8664 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-15 08:22:34.8664 Trace   Scanning Property FileName 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-15 08:22:34.8664 Trace   Scanning SimpleLayout 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt'
+2023-07-15 08:22:34.8664 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:22:34.8664 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:22:34.8664 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:22:34.8664 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:22:34.8664 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-15 08:22:34.8664 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-15 08:22:34.8664 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:22:34.8664 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:22:34.8664 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:22:34.8664 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:22:34.8664 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:22:34.8664 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:22:34.8664 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-15 08:22:34.8664 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-15 08:22:34.8664 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask\nlog.config
+2023-07-15 08:22:34.8664 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-15 08:22:34.8664 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-15 08:22:34.8822 Trace Initializing Layout Renderer: ${message}
+2023-07-15 08:22:34.8822 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:22:34.8822 Trace Initializing Layout Renderer: ${level}
+2023-07-15 08:22:34.8822 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:22:34.8822 Trace Initializing Layout Renderer: ${longdate}
+2023-07-15 08:22:34.8822 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-15 08:22:34.8822 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:22:34.8822 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-15 08:22:34.8822 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:22:34.8822 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:22:34.8822 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:22:34.8822 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:22:34.8822 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:22:34.8822 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:22:34.8822 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:22:34.8822 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-15 08:22:34.8822 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:22:34.8822 Trace Initializing C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt
+2023-07-15 08:22:34.8822 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:22:34.8822 Trace Scanning SimpleLayout 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt'
+2023-07-15 08:22:34.8822 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:22:34.8822 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:22:34.8822 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:22:34.8822 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:22:34.8822 Trace Initializing FileTarget(Name=logfile)
+2023-07-15 08:22:34.8822 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-15 08:22:34.8822 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-15 08:22:34.8822 Trace  Scanning Property FileName 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-15 08:22:34.8822 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-15 08:22:34.8822 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-15 08:22:34.8822 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-15 08:22:35.8687 Info AppDomain Shutting down. LogFactory closing...
+2023-07-15 08:22:35.8687 Debug Stopping file watching for path 'C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask' filter 'nlog.config'
+2023-07-15 08:22:35.8687 Trace Flushing all 1 targets...
+2023-07-15 08:22:35.8687 Trace ForEachItemInParallel() 1 items
+2023-07-15 08:22:35.8687 Trace FileTarget(Name=logfile): FlushAsync
+2023-07-15 08:22:35.8687 Trace Continuation invoked: 
+2023-07-15 08:22:35.8687 Trace Parallel task completed. 0 items remaining
+2023-07-15 08:22:35.8687 Debug Flush completed
+2023-07-15 08:22:35.8687 Trace FileTarget(Name=logfile): FlushAsync Done
+2023-07-15 08:22:35.8687 Debug Closing logging configuration...
+2023-07-15 08:22:35.8687 Trace Closing FileTarget(Name=logfile)
+2023-07-15 08:22:35.8687 Debug FileTarget(Name=logfile): Closing...
+2023-07-15 08:22:35.8687 Debug FileTarget(Name=logfile): Closed.
+2023-07-15 08:22:35.8687 Trace Closing C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt
+2023-07-15 08:22:35.8687 Trace Closing Layout Renderer: ${literal}
+2023-07-15 08:22:35.8687 Trace Closing Layout Renderer: ${shortdate}
+2023-07-15 08:22:35.8687 Trace Closing Layout Renderer: ${literal}
+2023-07-15 08:22:35.8687 Trace Closing ${longdate} ${level:uppercase=true} ${message}
+2023-07-15 08:22:35.8687 Trace Closing Layout Renderer: ${longdate}
+2023-07-15 08:22:35.8687 Trace Closing Layout Renderer: ${literal}
+2023-07-15 08:22:35.8687 Trace Closing Layout Renderer: ${level}
+2023-07-15 08:22:35.8822 Trace Closing Layout Renderer: ${literal}
+2023-07-15 08:22:35.8822 Trace Closing Layout Renderer: ${message}
+2023-07-15 08:22:35.8822 Debug Finished closing logging configuration.
+2023-07-15 08:22:35.8822 Info LogFactory has been closed.
+2023-07-15 08:23:01.1504 Info Message Template Auto Format enabled
+2023-07-15 08:23:01.1861 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:23:01.1861 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:23:01.1861 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:23:01.1861 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:23:01.1861 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:23:01.1861 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:23:01.1861 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:23:01.1861 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:23:01.1861 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-15 08:23:01.1861 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-15 08:23:01.1861 Trace ParseRulesElement
+2023-07-15 08:23:01.1992 Debug Watching file-filter 'nlog.config' in directory: C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask
+2023-07-15 08:23:01.1992 Debug --- NLog configuration dump ---
+2023-07-15 08:23:01.1992 Debug Targets:
+2023-07-15 08:23:01.1992 Debug FileTarget(Name=logfile)
+2023-07-15 08:23:01.1992 Debug Rules:
+2023-07-15 08:23:01.1992 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-15 08:23:01.1992 Debug --- End of NLog configuration dump ---
+2023-07-15 08:23:01.1992 Trace FindReachableObject<System.Object>:
+2023-07-15 08:23:01.1992 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-15 08:23:01.1992 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-15 08:23:01.1992 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-15 08:23:01.1992 Trace   Scanning Property FileName 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-15 08:23:01.1992 Trace   Scanning SimpleLayout 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt'
+2023-07-15 08:23:01.1992 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:23:01.1992 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:01.1992 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:23:01.1992 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:01.1992 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-15 08:23:01.1992 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-15 08:23:01.1992 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:23:01.1992 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:23:01.1992 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:01.2099 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:23:01.2099 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:01.2099 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:23:01.2099 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-15 08:23:01.2099 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-15 08:23:01.2099 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask\nlog.config
+2023-07-15 08:23:01.2099 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-15 08:23:01.2099 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-15 08:23:01.2099 Trace Initializing Layout Renderer: ${message}
+2023-07-15 08:23:01.2099 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:23:01.2099 Trace Initializing Layout Renderer: ${level}
+2023-07-15 08:23:01.2099 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:23:01.2099 Trace Initializing Layout Renderer: ${longdate}
+2023-07-15 08:23:01.2099 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-15 08:23:01.2099 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:23:01.2099 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-15 08:23:01.2099 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:23:01.2099 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:23:01.2099 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:01.2099 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:23:01.2099 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:01.2099 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:23:01.2099 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:23:01.2099 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-15 08:23:01.2099 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:23:01.2099 Trace Initializing C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt
+2023-07-15 08:23:01.2099 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:23:01.2099 Trace Scanning SimpleLayout 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt'
+2023-07-15 08:23:01.2099 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:23:01.2099 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:01.2099 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:23:01.2099 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:01.2099 Trace Initializing FileTarget(Name=logfile)
+2023-07-15 08:23:01.2261 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-15 08:23:01.2261 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-15 08:23:01.2261 Trace  Scanning Property FileName 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-15 08:23:01.2261 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-15 08:23:01.2261 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-15 08:23:01.2261 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-15 08:23:03.2801 Info AppDomain Shutting down. LogFactory closing...
+2023-07-15 08:23:03.2801 Debug Stopping file watching for path 'C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask' filter 'nlog.config'
+2023-07-15 08:23:03.2801 Trace Flushing all 1 targets...
+2023-07-15 08:23:03.2801 Trace ForEachItemInParallel() 1 items
+2023-07-15 08:23:03.2801 Trace FileTarget(Name=logfile): FlushAsync
+2023-07-15 08:23:03.2877 Trace Continuation invoked: 
+2023-07-15 08:23:03.2877 Trace Parallel task completed. 0 items remaining
+2023-07-15 08:23:03.2877 Debug Flush completed
+2023-07-15 08:23:03.2877 Trace FileTarget(Name=logfile): FlushAsync Done
+2023-07-15 08:23:03.2877 Debug Closing logging configuration...
+2023-07-15 08:23:03.2877 Trace Closing FileTarget(Name=logfile)
+2023-07-15 08:23:03.2877 Debug FileTarget(Name=logfile): Closing...
+2023-07-15 08:23:03.2877 Debug FileTarget(Name=logfile): Closed.
+2023-07-15 08:23:03.2877 Trace Closing C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt
+2023-07-15 08:23:03.2877 Trace Closing Layout Renderer: ${literal}
+2023-07-15 08:23:03.2877 Trace Closing Layout Renderer: ${shortdate}
+2023-07-15 08:23:03.2877 Trace Closing Layout Renderer: ${literal}
+2023-07-15 08:23:03.2877 Trace Closing ${longdate} ${level:uppercase=true} ${message}
+2023-07-15 08:23:03.2877 Trace Closing Layout Renderer: ${longdate}
+2023-07-15 08:23:03.2877 Trace Closing Layout Renderer: ${literal}
+2023-07-15 08:23:03.2877 Trace Closing Layout Renderer: ${level}
+2023-07-15 08:23:03.2877 Trace Closing Layout Renderer: ${literal}
+2023-07-15 08:23:03.2877 Trace Closing Layout Renderer: ${message}
+2023-07-15 08:23:03.2877 Debug Finished closing logging configuration.
+2023-07-15 08:23:03.2877 Info LogFactory has been closed.
+2023-07-15 08:23:12.1251 Info Message Template Auto Format enabled
+2023-07-15 08:23:12.1926 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:23:12.1958 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:23:12.1958 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:23:12.1958 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:23:12.1958 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:23:12.1958 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:23:12.1958 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:23:12.1958 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:23:12.1958 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-15 08:23:12.1958 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-15 08:23:12.2099 Trace ParseRulesElement
+2023-07-15 08:23:12.2267 Debug Watching file-filter 'nlog.config' in directory: C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask
+2023-07-15 08:23:12.2267 Debug --- NLog configuration dump ---
+2023-07-15 08:23:12.2267 Debug Targets:
+2023-07-15 08:23:12.2267 Debug FileTarget(Name=logfile)
+2023-07-15 08:23:12.2267 Debug Rules:
+2023-07-15 08:23:12.2267 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-15 08:23:12.2267 Debug --- End of NLog configuration dump ---
+2023-07-15 08:23:12.2267 Trace FindReachableObject<System.Object>:
+2023-07-15 08:23:12.2267 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-15 08:23:12.2430 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-15 08:23:12.2430 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-15 08:23:12.2430 Trace   Scanning Property FileName 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-15 08:23:12.2430 Trace   Scanning SimpleLayout 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt'
+2023-07-15 08:23:12.2430 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:23:12.2430 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:12.2430 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:23:12.2430 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:12.2430 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-15 08:23:12.2430 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-15 08:23:12.2430 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:23:12.2430 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:23:12.2430 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:12.2430 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:23:12.2430 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:12.2430 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:23:12.2430 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-15 08:23:12.2562 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-15 08:23:12.2562 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\monah\Sharp\ApricodeTestTask\ApricodeTestTask\nlog.config
+2023-07-15 08:23:12.2562 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-15 08:23:12.2747 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-15 08:23:12.2747 Trace Initializing Layout Renderer: ${message}
+2023-07-15 08:23:12.2747 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:23:12.2747 Trace Initializing Layout Renderer: ${level}
+2023-07-15 08:23:12.2747 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:23:12.2747 Trace Initializing Layout Renderer: ${longdate}
+2023-07-15 08:23:12.2747 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-15 08:23:12.2747 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:23:12.2747 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-15 08:23:12.2747 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:23:12.2747 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-15 08:23:12.2747 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:12.2877 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-15 08:23:12.2877 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:12.2877 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-15 08:23:12.2877 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:23:12.2877 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-15 08:23:12.2877 Trace Initializing Layout Renderer: ${literal}
+2023-07-15 08:23:12.2877 Trace Initializing C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt
+2023-07-15 08:23:12.2877 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-15 08:23:12.2877 Trace Scanning SimpleLayout 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt'
+2023-07-15 08:23:12.2877 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-15 08:23:12.2877 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:12.2877 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-15 08:23:12.2877 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-15 08:23:12.2877 Trace Initializing FileTarget(Name=logfile)
+2023-07-15 08:23:12.3037 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-15 08:23:12.3037 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-15 08:23:12.3037 Trace  Scanning Property FileName 'C:/Users/monah/Sharp/ApricodeTestTask/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-15 08:23:12.3037 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-15 08:23:12.3037 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-15 08:23:12.3037 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-15 08:23:22.5159 Debug Targets configured when LogLevel >= Debug for Logger: LoggerService.LoggerManager
+2023-07-15 08:23:22.5159 Debug Logger LoggerService.LoggerManager [Debug] => logfile
+2023-07-15 08:23:22.5159 Debug Logger LoggerService.LoggerManager [Info] => logfile
+2023-07-15 08:23:22.5159 Debug Logger LoggerService.LoggerManager [Warn] => logfile
+2023-07-15 08:23:22.5159 Debug Logger LoggerService.LoggerManager [Error] => logfile
+2023-07-15 08:23:22.5159 Debug Logger LoggerService.LoggerManager [Fatal] => logfile
+2023-07-15 08:23:22.5327 Debug FileTarget(Name=logfile): Preparing for new file: 'C:/Users/monah/Sharp/ApricodeTestTask/logs/2023-07-15_logfile.txt'
+2023-07-15 08:23:22.5327 Debug FileTarget(Name=logfile): Creating file appender: 'C:/Users/monah/Sharp/ApricodeTestTask/logs/2023-07-15_logfile.txt'
+2023-07-15 08:23:22.5327 Trace FileTarget(Name=logfile): Opening C:/Users/monah/Sharp/ApricodeTestTask/logs/2023-07-15_logfile.txt with allowFileSharedWriting=False
