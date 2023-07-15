@@ -11,6 +11,7 @@ namespace Repository
         public GameRepository(ApplicationContext applicationContext) : base(applicationContext) { }
         public void AddGenres(Game game, IEnumerable<int>? genresIds)
         {
+            //Добавить проверку на не корректные genresIds
             if (!genresIds.IsNullOrEmpty())
             {
                 foreach (int genresId in genresIds!)
@@ -24,31 +25,24 @@ namespace Repository
             }
         }
         public void CreateGame(Game game) => Create(game);
-
         public void DeleteGame(Game game) => Delete(game);
-        
         public IEnumerable<Game> GetAllGames() => GetAll().Include(g => g.Genres).ToList();
         public Game? GetById(int id) => ApplicationContext.Games
             .Include(g => g.GameGenres)
                 .ThenInclude(gg => gg.Genre)
             .FirstOrDefault(g => g.Id == id);
-        public void UpdateGame(Game game)
-        {
-            try
-            {
-                Update(game);
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
+        public IEnumerable<Game> GetGamesByGenre(int genreId) => ApplicationContext.GameGenre
+                .Where(g => g.GenreId == genreId)
+                .Include(g => g.Game.Genres)
+                .Select(g => g.Game)
+                .AsNoTracking()
+                .ToList();
 
-        }
-
+        public void UpdateGame(Game game) => Update(game);
         public void UpdateGenres(Game gameToUpdate, IEnumerable<int>? genresIds)
         {
-            //todo 
+            //Добавить проверку на не корректные genresIds
 
             if (genresIds.IsNullOrEmpty())
             {

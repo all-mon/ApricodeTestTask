@@ -138,5 +138,20 @@ namespace ApiServer.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+        [HttpGet]
+        [Route("genre/{genreId}")]
+        public IActionResult GetGamesByGenre(int genreId)
+        {
+            try
+            {
+                var games = _repository.Game.GetGamesByGenre(genreId);
+                var gamesResult = _mapper.Map<IEnumerable<GameDto>>(games);
+                return Ok(gamesResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }

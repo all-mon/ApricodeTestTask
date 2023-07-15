@@ -7,6 +7,7 @@ namespace Entities
     {
         public DbSet<Game> Games { get; set; }
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<GameGenre> GameGenre { get; set; }
         
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options):base(options) { Database.EnsureCreated(); }

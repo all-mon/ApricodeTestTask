@@ -11,5 +11,6 @@ namespace Contracts
         void CreateGame(Game game);
         void UpdateGame(Game game);
         void DeleteGame(Game game);
+        IEnumerable<Game> GetGamesByGenre(int genreId);
     }
 }
